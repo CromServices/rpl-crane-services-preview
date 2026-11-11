@@ -4,8 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Power-pole crane and borer work, Padstow | RPL Crane Services</title>
-<meta name="description" content="Power-pole crane and borer work from Padstow. Proline crane and borer on a Scania. Call 0418 672 546.">
+<title>RPL Crane Services — Home</title>
+<meta name="description" content="Website preview.">
+<meta property="og:description" content="Website preview.">
+<meta name="twitter:description" content="Website preview.">
 <link rel="stylesheet" href="styles.css">
 <script>
 (function(){
@@ -162,13 +164,14 @@
       <label class="full">Email <input type="email" name="email" autocomplete="email"></label>
       <label class="full">Suburb or address <input type="text" name="suburb"></label>
       <label class="full">A short description <textarea name="details"></textarea></label>
-      <label>Preferred time to talk
-        <select name="when">
-          <option>Morning</option>
-          <option>Midday</option>
-          <option>Afternoon</option>
-        </select>
-      </label>
+      <fieldset class="full pill-field">
+        <legend>Preferred time to talk</legend>
+        <div class="time-pills pill-radios" role="radiogroup" aria-label="Preferred time to talk">
+          <label class="pill"><input type="radio" name="when" value="Morning" checked> Morning</label>
+          <label class="pill"><input type="radio" name="when" value="Midday"> Midday</label>
+          <label class="pill"><input type="radio" name="when" value="Afternoon"> Afternoon</label>
+        </div>
+      </fieldset>
       <div class="submit">
         <button class="btn btn-accent" type="submit">Request a quote</button>
         <p class="thanks">Request saved.</p>
