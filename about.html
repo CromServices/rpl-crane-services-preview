@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>RPL Crane Services — About</title>
+<meta name="description" content="Website preview.">
+<meta property="og:description" content="Website preview.">
+<meta name="twitter:description" content="Website preview.">
+<link rel="stylesheet" href="styles.css">
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem("rpl-theme");
+    if (t !== "light" && t !== "dark") {
+      t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+})();
+</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/logo-400.webp" alt="RPL Crane Services" width="400" height="124"></a>
+    <nav class="desk" aria-label="Site">
+      <a href="about.html">About and machinery</a>
+      <a href="work.html">Work</a>
+      <a href="quote.html">Quote</a>
+      <a href="index.html#book">Book a visit</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-ghost-light" href="tel:+61418672546">Call 0418 672 546</a>
+      <a class="btn btn-accent" href="quote.html">Request a quote</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch light/dark">
+        <span class="theme-toggle-face">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">About us and our machinery</p>
+    <h1>A Proline crane and borer, mounted on a Scania</h1>
+  </div>
+</section>
+<section class="section paper">
+  <div class="wrap about-grid">
+    <div>
+      <p>RPL Crane Services has been operating for 14 years from Padstow, next to the M5. The crane and borer service we provide specialises in removing and installing power poles.</p>
+      <p>The plant is a 5/10 ton Proline continuous slewing crane, licensed up to 60 ton, with a Proline borer that is excellent for drilling up to 3.6 m. Standard auger sizes are 250–600 mm. Other sizes can be arranged, subject to terrain, soil and rock types.</p>
+      <p>The crane is always certified and inspected daily. Our crane operators and dogmen are well trained and fully licensed. All insurances and training certificates are current. We can provide a site inspection if required, and a pre-check on site before start can be arranged.</p>
+      <p class="muted">Contract licence N-0371621/1. Insurance: High Risk HRW 068323. 24-hour service, six days a week (not Sunday).</p>
+    </div>
+    <img src="assets/crane-front-600.webp" width="600" height="260" alt="The front of the RPL crane and borer truck" loading="lazy" style="border-radius:6px;width:100%;height:auto">
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 RPL Crane Services Pty Ltd</p>
+    <p><a href="tel:+61418672546">0418 672 546</a> · Padstow NSW</p>
+  </div>
+</footer>
+<div class="sticky-call" aria-label="Call or request a quote">
+  <div class="wrap">
+    <a class="call" href="tel:+61418672546">Call 0418 672 546</a>
+    <a class="quote" href="quote.html">Request a quote</a>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

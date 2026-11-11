@@ -229,12 +229,24 @@ form .submit{grid-column:1 / -1}
 .chip .dow{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .chip .dom{font-size:22px;font-weight:700;line-height:1.1}
 .chip .mon{font-size:12px;color:var(--muted)}
-.chip.is-on,.pill.is-on,.pick.is-on{border-color:var(--accent);background:var(--dark);color:var(--on-dark)}
+.chip.is-on,.pill.is-on,.job-chip.is-on,.pick.is-on{border-color:var(--accent);background:var(--dark);color:var(--on-dark)}
 .chip.is-on .dow,.chip.is-on .mon{color:var(--mark)}
 .chip.is-off,.chip[disabled]{
   opacity:.45;cursor:not-allowed;background:var(--wash);
 }
 .time-pills,.job-chips{display:flex;flex-wrap:wrap;gap:8px}
+.job-chips{margin:0 0 4px}
+.job-chip{
+  min-height:44px;padding:0 18px;border:1.5px solid var(--line);
+  background:var(--chip-bg);border-radius:999px;font-weight:700;font-size:16px;
+  cursor:pointer;color:var(--ink);white-space:nowrap;
+}
+.spec-note{color:var(--muted);margin:0 0 12px}
+.spec-block{margin:0}
+.spec-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.page-hero{background:var(--dark);color:var(--on-dark);padding:56px 0 48px}
+.page-hero h1,.page-hero .kicker{color:var(--on-dark)}
+.page-hero .kicker{color:var(--mark)}
 .pill{
   min-height:44px;padding:0 18px;border:1.5px solid var(--line);
   background:var(--chip-bg);border-radius:999px;font-weight:700;font-size:16px;
@@ -296,6 +308,7 @@ footer.site .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:spac
   .work-list,.about-grid,.book-grid,.contact-grid{grid:auto / 1fr}
   .bento{grid-template-columns:1fr 1fr}
   form{grid-template-columns:1fr}
+  .spec-row{grid-template-columns:1fr}
 }
 @media (max-width:640px){
   body{font-size:17px;padding-bottom:76px}

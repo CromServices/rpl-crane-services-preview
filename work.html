@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>RPL Crane Services — Work</title>
+<meta name="description" content="Website preview.">
+<meta property="og:description" content="Website preview.">
+<meta name="twitter:description" content="Website preview.">
+<link rel="stylesheet" href="styles.css">
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem("rpl-theme");
+    if (t !== "light" && t !== "dark") {
+      t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+})();
+</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/logo-400.webp" alt="RPL Crane Services" width="400" height="124"></a>
+    <nav class="desk" aria-label="Site">
+      <a href="about.html">About and machinery</a>
+      <a href="work.html">Work</a>
+      <a href="quote.html">Quote</a>
+      <a href="index.html#book">Book a visit</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-ghost-light" href="tel:+61418672546">Call 0418 672 546</a>
+      <a class="btn btn-accent" href="quote.html">Request a quote</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch light/dark">
+        <span class="theme-toggle-face">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">Our services</p>
+    <h1>Overhead support for electrical industry projects</h1>
+  </div>
+</section>
+<section class="section paper">
+  <div class="wrap">
+    <p>Available to the commercial and private sectors. We regularly work with other contractors on electrical industry projects.</p>
+    <div class="work-list">
+      <article><h3>Installing and removing power poles</h3><p>Our team holds the power pole in place with our specialised crane trucks, so other contractors can carry out their work with less risk.</p></article>
+      <article><h3>Relocation and maintenance support</h3><p>Overhead support during maintenance, removal, relocation or installation of power poles.</p></article>
+      <article><h3>Securing poles for underground work</h3><p>We also secure power poles while underground maintenance is performed for local councils and private contractors.</p></article>
+      <article><h3>Pole transport</h3><p>Our transport has provision to carry a pole up to 11 m.</p></article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 RPL Crane Services Pty Ltd</p>
+    <p><a href="tel:+61418672546">0418 672 546</a> · Padstow NSW</p>
+  </div>
+</footer>
+<div class="sticky-call" aria-label="Call or request a quote">
+  <div class="wrap">
+    <a class="call" href="tel:+61418672546">Call 0418 672 546</a>
+    <a class="quote" href="quote.html">Request a quote</a>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

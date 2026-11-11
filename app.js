@@ -1,7 +1,5 @@
 (function () {
   var TZ = "Australia/Sydney";
-  var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  var mons = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function partsInTz(date) {
     var fmt = new Intl.DateTimeFormat("en-AU", {
@@ -19,13 +17,12 @@
   }
 
   function ymdInTz(date) {
-    var p = new Intl.DateTimeFormat("en-CA", {
+    return new Intl.DateTimeFormat("en-CA", {
       timeZone: TZ,
       year: "numeric",
       month: "2-digit",
       day: "2-digit"
     }).format(date);
-    return p;
   }
 
   function weekdayInTz(date) {
@@ -36,15 +33,18 @@
     if (!root) return;
     root.innerHTML = "";
     var start = new Date();
-    var first = 0;
-    for (var i = 0; i < 14; i++) {
+    var added = 0;
+    var i = 0;
+    while (added < 14 && i < 28) {
       var d = new Date(start.getTime() + i * 86400000);
+      i++;
       var wd = weekdayInTz(d);
-      var weekend = wd === "Sat" || wd === "Sun";
+      if (wd === "Sun") continue;
       var b = document.createElement("button");
       b.type = "button";
-      b.className = "chip";
+      b.className = "chip" + (added === 0 ? " is-on" : "");
       b.setAttribute("data-date", ymdInTz(d));
+      if (added === 0) b.setAttribute("aria-pressed", "true");
       var p = partsInTz(d);
       var mon = (p.month || "").slice(0, 3);
       b.innerHTML =
@@ -55,15 +55,8 @@
         '</span><span class="mon">' +
         mon +
         "</span>";
-      if (weekend) {
-        b.disabled = true;
-        b.classList.add("is-off");
-        b.setAttribute("aria-disabled", "true");
-      } else if (first === 0) {
-        b.classList.add("is-on");
-        first = 1;
-      }
       root.appendChild(b);
+      added++;
     }
   }
 
@@ -87,12 +80,25 @@
 
   groupSelect(".day-chips", ".chip");
   groupSelect(".time-pills", ".pill");
-  groupSelect(".job-chips", ".pill");
-  groupSelect(".crane-pick", ".pick");
 
-  document.querySelectorAll(".pick").forEach(function (el) {
-    el.classList.add("is-on");
-    el.setAttribute("aria-pressed", "true");
+  document.querySelectorAll(".job-chips").forEach(function (box) {
+    box.addEventListener("click", function (e) {
+      var el = e.target.closest(".job-chip");
+      if (!el || !box.contains(el)) return;
+      box.querySelectorAll(".job-chip").forEach(function (n) {
+        n.classList.remove("is-on");
+        n.setAttribute("aria-pressed", "false");
+      });
+      el.classList.add("is-on");
+      el.setAttribute("aria-pressed", "true");
+      var kind = el.getAttribute("data-job");
+      var form = el.closest("form") || document;
+      form.querySelectorAll(".spec-block").forEach(function (b) {
+        if (b.getAttribute("data-job") === kind) b.removeAttribute("hidden");
+        else b.setAttribute("hidden", "");
+      });
+      updateSummaries();
+    });
   });
 
   function selectedText(root, sel) {
@@ -109,12 +115,11 @@
   }
 
   function updateOne(form) {
-    var plant = selectedText(form, ".pick.is-on h3") || "Proline crane and borer on a Scania";
+    var job = selectedText(form, ".job-chip.is-on");
     var chip = form.querySelector(".chip.is-on");
     var day = chipLabel(chip);
     var win = selectedText(form, ".time-pills .pill.is-on");
-    var job = selectedText(form, ".job-chips .pill.is-on");
-    var line = [plant, day, win, job].filter(Boolean).join(" · ");
+    var line = [job, day, win].filter(Boolean).join(" · ");
     var sum = form.querySelector(".summary");
     if (sum) sum.textContent = line;
     return line;
@@ -131,7 +136,7 @@
       var line = updateOne(f);
       var t = f.querySelector(".thanks");
       if (t) {
-        t.textContent = "Request saved. " + line;
+        t.textContent = line ? "Request saved. " + line : "Request saved.";
         t.classList.add("is-on");
         t.style.display = "block";
       }

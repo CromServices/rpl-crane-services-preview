@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>RPL Crane Services — Quote</title>
+<meta name="description" content="Website preview.">
+<meta property="og:description" content="Website preview.">
+<meta name="twitter:description" content="Website preview.">
+<link rel="stylesheet" href="styles.css">
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem("rpl-theme");
+    if (t !== "light" && t !== "dark") {
+      t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+})();
+</script>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img src="assets/logo-400.webp" alt="RPL Crane Services" width="400" height="124"></a>
+    <nav class="desk" aria-label="Site">
+      <a href="about.html">About and machinery</a>
+      <a href="work.html">Work</a>
+      <a href="quote.html">Quote</a>
+      <a href="index.html#book">Book a visit</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-ghost-light" href="tel:+61418672546">Call 0418 672 546</a>
+      <a class="btn btn-accent" href="quote.html">Request a quote</a>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch light/dark">
+        <span class="theme-toggle-face">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+<section class="page-hero">
+  <div class="wrap">
+    <p class="kicker">Quote</p>
+    <h1>Request a quote</h1>
+  </div>
+</section>
+<section class="section wash" id="quote">
+  <div class="wrap book-grid">
+    <div>
+      <p class="help">Our minimum job period is 4 hours. Night and emergency surcharges apply. Payment is by cash or direct debit.</p>
+      <ol class="steps">
+        <li data-n="1">Tell us your name, phone, email and a short description of the work.</li>
+        <li data-n="2">Hit “Request a quote”.</li>
+        <li data-n="3">A short thank-you will show with the details you entered.</li>
+        <li data-n="4">Call 0418 672 546 if you would rather talk through the job now.</li>
+      </ol>
+    </div>
+    <form action="#" method="post">
+      <label>Name <input type="text" name="name" autocomplete="name"></label>
+      <label>Phone <input type="tel" name="phone" autocomplete="tel"></label>
+      <label class="full">Email <input type="email" name="email" autocomplete="email"></label>
+      <label class="full">Suburb or address <input type="text" name="suburb"></label>
+      <fieldset class="full pill-field">
+        <legend>Type of work</legend>
+        <div class="time-pills pill-radios" role="radiogroup" aria-label="Type of work">
+          <label class="pill"><input type="radio" name="type" value="Power pole install or removal" checked> Power pole install or removal</label>
+          <label class="pill"><input type="radio" name="type" value="Relocation or maintenance support"> Relocation or maintenance support</label>
+          <label class="pill"><input type="radio" name="type" value="Securing a pole for underground work"> Securing a pole for underground work</label>
+          <label class="pill"><input type="radio" name="type" value="Pole transport"> Pole transport</label>
+          <label class="pill"><input type="radio" name="type" value="Site inspection"> Site inspection</label>
+          <label class="pill"><input type="radio" name="type" value="Other"> Other</label>
+        </div>
+      </fieldset>
+      <label class="full">A short description <textarea name="details"></textarea></label>
+      <fieldset class="full pill-field">
+        <legend>Preferred time to talk</legend>
+        <div class="time-pills pill-radios" role="radiogroup" aria-label="Preferred time to talk">
+          <label class="pill"><input type="radio" name="when" value="Morning" checked> Morning</label>
+          <label class="pill"><input type="radio" name="when" value="Afternoon"> Afternoon</label>
+          <label class="pill"><input type="radio" name="when" value="Either"> Either</label>
+        </div>
+      </fieldset>
+      <div class="submit">
+        <button class="btn btn-accent" type="submit">Request a quote</button>
+        <p class="thanks">Request saved.</p>
+      </div>
+    </form>
+  </div>
+</section>
+<section class="section paper" id="book">
+  <div class="wrap">
+    <h2>Book a visit</h2>
+    <p class="help">We work with our Proline crane and borer, mounted on a Scania. This holds a visit or a call. The job is confirmed once we reply.</p>
+    <form action="#" method="post">
+      <div class="book-widget">
+        <p class="widget-label">What do you need?</p>
+        <div class="job-chips" role="group" aria-label="Type of work">
+          <button type="button" class="job-chip is-on" data-job="lift" aria-pressed="true">Crane lift</button>
+          <button type="button" class="job-chip" data-job="borer" aria-pressed="false">Borer / post holes</button>
+        </div>
+        <div class="spec-block" data-job="lift">
+          <p class="spec-note">The plant is a 5/10 ton Proline continuous slewing crane, licensed up to 60 ton.</p>
+          <label class="full">About the lift <textarea name="lift-details"></textarea></label>
+        </div>
+        <div class="spec-block" data-job="borer" hidden>
+          <p class="spec-note">The Proline borer is excellent for drilling up to 3.6 m. Standard auger sizes are 250–600 mm. Other sizes can be arranged, subject to terrain, soil and rock types.</p>
+          <div class="spec-row">
+            <label>Hole depth (up to 3.6 m) <input type="text" name="depth" inputmode="decimal"></label>
+            <label>Auger size (250–600 mm) <input type="text" name="auger" inputmode="numeric"></label>
+          </div>
+        </div>
+        <p class="widget-label">Preferred day</p>
+        <div class="day-chips-wrap"><div class="day-chips" role="group"></div></div>
+        <p class="widget-label">Time window</p>
+        <div class="time-pills" role="group">
+          <button type="button" class="pill is-on" data-time="Morning" aria-pressed="true">Morning</button>
+          <button type="button" class="pill" data-time="Afternoon" aria-pressed="false">Afternoon</button>
+          <button type="button" class="pill" data-time="Either" aria-pressed="false">Either</button>
+        </div>
+        <p class="summary" aria-live="polite"></p>
+        <label>Name <input type="text" name="bname" autocomplete="name"></label>
+        <label>Phone <input type="tel" name="bphone" autocomplete="tel"></label>
+        <label class="full">Email <input type="email" name="bemail" autocomplete="email"></label>
+        <label class="full">Site address <input type="text" name="baddress"></label>
+        <label class="full">Anything else we should know <textarea name="bdetails"></textarea></label>
+        <div class="submit">
+          <button class="btn btn-accent" type="submit" style="width:100%">Request this time</button>
+          <p class="thanks">Request saved.</p>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p>© 2026 RPL Crane Services Pty Ltd</p>
+    <p><a href="tel:+61418672546">0418 672 546</a> · Padstow NSW</p>
+  </div>
+</footer>
+<div class="sticky-call" aria-label="Call or request a quote">
+  <div class="wrap">
+    <a class="call" href="tel:+61418672546">Call 0418 672 546</a>
+    <a class="quote" href="quote.html">Request a quote</a>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
