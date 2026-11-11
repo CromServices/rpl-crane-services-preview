@@ -1,0 +1,5 @@
+1b7d965e7dc55a3d3bb3bc2ce52874f4  checks/shots/booking-success.png
+6882394ed42947d8e9fedb78814ffb77  checks/shots/desktop-1440-dark.png
+d071ec0b2cdd5ed6a9c0320508362bfe  checks/shots/desktop-1440-light.png
+6f6c96cfec169eb2af8bfaa795f3e956  checks/shots/mobile-390-dark.png
+f2e2a7c47561fdff0b7cce0defd7a85b  checks/shots/mobile-390-light.png
